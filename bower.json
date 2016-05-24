@@ -1,0 +1,14 @@
+{
+  "name": "projectX",
+  "version": "0.0.0",
+  "homepage": "https://github.com/yaroslav0507/projectX",
+  "authors": [
+    "Yaroslav Zaklinskyi <Yaroslav_Zaklinskyi@epam.com>"
+  ],
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "dependencies": {
+  }
+}
