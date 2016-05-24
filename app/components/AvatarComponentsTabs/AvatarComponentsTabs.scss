@@ -1,0 +1,8 @@
+.tab-views{
+  height: 530px;
+
+  & > div{
+    height: auto !important;
+    max-height: 100%;
+  }
+}

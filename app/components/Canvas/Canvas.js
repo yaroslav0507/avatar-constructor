@@ -1,7 +1,9 @@
 'use strict';
 
 import React from 'react';
+import fabric from 'fabric/dist/fabric.require';
 
+let canvas;
 const styles = {
     canvas: {
 	width: 437,
@@ -12,9 +14,28 @@ const styles = {
 };
 
 export default class Canvas extends React.Component {
+    componentDidMount(){
+
+	canvas = new fabric.Canvas('canvas', {
+	    width: 400,
+	    height: 400
+	});
+
+	var rect = new fabric.Rect({
+	    left: 100,
+	    top: 100,
+	    fill: 'red',
+	    width: 20,
+	    height: 20
+	});
+
+	canvas.add(rect);
+
+    }
+
     render(){
 	return (
-	    <div style={styles.canvas}></div>
+	    <canvas id="canvas" style={styles.canvas}></canvas>
 	)
     }
 }
