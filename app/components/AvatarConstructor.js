@@ -4,6 +4,7 @@ import React from 'react';
 import Paper from 'material-ui/Paper';
 import NavigationBar from './NavigationBar';
 import Canvas from './Canvas/Canvas';
+import ComponentsGrid from './ComponentsGrid/ComponentsGrid';
 
 const styles = {
     div:{
@@ -39,7 +40,7 @@ export default class AvatarConstructor extends React.Component{
 			<Canvas />
 		    </Paper>
 		    <Paper style={styles.paperRight}>
-			<div className="avatar-constructor">Controls</div>
+			<ComponentsGrid />
 		    </Paper>
 		</div>
 	    </div>
