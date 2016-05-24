@@ -34,9 +34,9 @@ export default class AvatarComponentsTabs extends React.Component {
     }
 
     handleChange = (value) => {
-	this.setState({
+	this.state = {
 	    slideIndex: value
-	});
+	};
     };
 
     render() {

@@ -36,21 +36,27 @@ export default class AvatarConstructor extends React.Component{
     constructor(){
 	super();
 
-	this.onStoreChanged();
-    }
-
-    onStoreChanged(){
 	this.state = {
-	    avatar: AvatarConstructorStore.getState()
+	    avatar: this.getState()
 	}
     }
 
+    onStoreChanged(){
+	this.setState({
+	    avatar: this.getState()
+	});
+    }
+
+    getState(){
+	return AvatarConstructorStore.getState();
+    }
+
     componentDidMount(){
-	AvatarConstructorStore.addChangeListener(this.onStoreChanged);
+	AvatarConstructorStore.addChangeListener(this.onStoreChanged.bind(this));
     }
 
     componentWillUnmount() {
-	AvatarConstructorStore.removeChangeListener(this.onStoreChanged);
+	AvatarConstructorStore.removeChangeListener(this.onStoreChanged.bind(this));
     }
 
     render(){
@@ -59,7 +65,7 @@ export default class AvatarConstructor extends React.Component{
 		<NavigationBar />
 		<div style={styles.div}>
 		    <Paper style={styles.paperLeft}>
-			<Canvas store={this.state}/>
+			<Canvas avatar={this.state.avatar}/>
 		    </Paper>
 		    <Paper style={styles.paperRight}>
 			<AvatarComponentsTabs />

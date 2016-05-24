@@ -3,9 +3,13 @@
 import AvatarConstructorDispatcher from '../dispatcher/AvatarConstructorDispatcher';
 import { EventEmitter } from 'events';
 import ACTIONS from '../constants/ACTIONS';
+import PREDEFINED_IMAGES from '../constants/PREDEFINED_IMAGES';
+
 
 const CHANGE_EVENT = 'change';
-let _avatar = {};
+let _avatar = {
+    face: `/img/grid-list/${PREDEFINED_IMAGES.faces[0]}`
+};
 
 class Store extends EventEmitter {
     constructor(){
@@ -25,9 +29,7 @@ class Store extends EventEmitter {
     }
 
     setFace(src){
-	console.log(src);
 	_avatar.face = src;
-	this.emitChange();
     }
 
     getState(){
@@ -36,8 +38,10 @@ class Store extends EventEmitter {
 
     handleActions(action){
 	switch (action.type){
-	    case ACTIONS.SET_FACE :
+	    case ACTIONS.SET_FACE : {
 		this.setFace(action.src);
+		this.emitChange();
+	    }
 	}
     }
 }
