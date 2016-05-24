@@ -37,18 +37,19 @@ export default class AvatarConstructor extends React.Component{
 	super();
 
 	this.state = {
-	    avatar: this.getState()
+	    avatar: AvatarConstructorStore.getDefaultState()
 	}
     }
 
     onStoreChanged(){
+	console.log(this.state);
 	this.setState({
-	    avatar: this.getState()
+	    avatar: AvatarConstructorStore.getState()
 	});
     }
 
-    getState(){
-	return AvatarConstructorStore.getState();
+    shouldComponentUpdate(nextProps, nextState){
+	return nextState !== this.state;
     }
 
     componentDidMount(){

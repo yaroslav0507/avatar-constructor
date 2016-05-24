@@ -34,15 +34,26 @@ export default class AvatarComponentsTabs extends React.Component {
     }
 
     handleChange = (value) => {
-	this.state = {
+	this.setState({
 	    slideIndex: value
-	};
+	});
     };
 
     render() {
 	const setAvatarsFace = (event) => {
-	    const face = event.target.src;
-	    AvatarConstructorActions.setFace(face);
+	    AvatarConstructorActions.setFace(event.target.src);
+	};
+
+	const setAvatarsHair = (event) => {
+	    AvatarConstructorActions.setHair(event.target.src);
+	};
+
+	const setAvatarsGlasses = (event) => {
+	    AvatarConstructorActions.setGlasses(event.target.src);
+	};
+
+	const setAvatarsClothes = (event) => {
+	    AvatarConstructorActions.setClothes(event.target.src);
 	};
 
 	return (
@@ -63,9 +74,9 @@ export default class AvatarComponentsTabs extends React.Component {
 		    		onChangeIndex={this.handleChange}>
 
 		    <ImageList list={ Faces } handleClick={setAvatarsFace} />
-		    <ImageList list={ Hair }/>
-		    <ImageList list={ Glasses }/>
-		    <ImageList list={ Clothes }/>
+		    <ImageList list={ Hair } handleClick={setAvatarsHair} />
+		    <ImageList list={ Glasses } handleClick={setAvatarsGlasses} />
+		    <ImageList list={ Clothes } handleClick={setAvatarsClothes}/>
 
 		</SwipeableViews>
 
