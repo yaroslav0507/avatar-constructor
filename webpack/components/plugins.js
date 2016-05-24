@@ -1,4 +1,5 @@
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = [
     new webpack.HotModuleReplacementPlugin(),
@@ -8,5 +9,10 @@ module.exports = [
     }),
     new ExtractTextPlugin('app.css', {
         allChunks: true
-    })
+    }),
+    new CopyWebpackPlugin([{
+        context: projectDir + '/app/img/',
+        from: '**/*.png',
+        to: projectDir + '/build/img/'
+    }])
 ];

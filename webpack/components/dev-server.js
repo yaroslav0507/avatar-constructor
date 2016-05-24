@@ -9,5 +9,6 @@ module.exports = {
     stats: 'errors-only',
     host: process.env.HOST,
     port: process.env.PORT,
-    quiet: false
+    quiet: false,
+    outputPath: path.join(__dirname, 'build')
 };

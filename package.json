@@ -41,10 +41,12 @@
   "devDependencies": {
     "babel-loader": "^6.2.0",
     "babel-preset-react": "^6.3.13",
+    "copy-webpack-plugin": "^3.0.0",
     "css-loader": "^0.23.1",
     "dotenv": "^1.2.0",
     "extract-text-webpack-plugin": "^0.9.1",
     "html-webpack-plugin": "^1.7.0",
+    "image-webpack-loader": "^1.8.0",
     "import-glob-loader": "^1.1.0",
     "node-sass": "^3.4.2",
     "react": "^0.14.3",
