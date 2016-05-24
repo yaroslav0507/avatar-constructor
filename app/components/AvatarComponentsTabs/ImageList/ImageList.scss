@@ -1,0 +1,13 @@
+.image-list{
+  margin-top: 15px;
+
+  &__item{
+     display: inline-block;
+     border-radius: 5px;
+
+     &:hover{
+       background-color: #f7f7f7;
+       cursor: pointer;
+     }
+  }
+}

@@ -23,6 +23,7 @@
     "chai": "^3.4.1",
     "core-js": "^2.0.0",
     "fabric": "^1.6.2",
+    "flux": "^2.1.1",
     "karma": "^0.13.15",
     "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^0.2.2",

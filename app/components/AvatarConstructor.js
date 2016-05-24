@@ -5,6 +5,7 @@ import Paper from 'material-ui/Paper';
 import NavigationBar from './NavigationBar/NavigationBar';
 import Canvas from './Canvas/Canvas';
 import AvatarComponentsTabs from './AvatarComponentsTabs/AvatarComponentsTabs';
+import AvatarConstructorStore from '../stores/AvatarConstructorStore';
 
 const styles = {
     div:{
@@ -32,13 +33,33 @@ const styles = {
 };
 
 export default class AvatarConstructor extends React.Component{
+    constructor(){
+	super();
+
+	this.onStoreChanged();
+    }
+
+    onStoreChanged(){
+	this.state = {
+	    avatar: AvatarConstructorStore.getState()
+	}
+    }
+
+    componentDidMount(){
+	AvatarConstructorStore.addChangeListener(this.onStoreChanged);
+    }
+
+    componentWillUnmount() {
+	AvatarConstructorStore.removeChangeListener(this.onStoreChanged);
+    }
+
     render(){
 	return (
 	    <div>
 		<NavigationBar />
 		<div style={styles.div}>
 		    <Paper style={styles.paperLeft}>
-			<Canvas />
+			<Canvas store={this.state}/>
 		    </Paper>
 		    <Paper style={styles.paperRight}>
 			<AvatarComponentsTabs />

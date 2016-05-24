@@ -2,6 +2,7 @@
 
 import React from 'react';
 import fabric from 'fabric/dist/fabric.require';
+import AvatarConstructorStore from '../../stores/AvatarConstructorStore';
 
 let canvas;
 const styles = {
@@ -14,7 +15,14 @@ const styles = {
 };
 
 export default class Canvas extends React.Component {
+    constructor(){
+	super();
+    }
+
     componentDidMount(){
+
+	console.log("CANVAS PROPS: ", this.props);
+	//let text = new fabric.Text(store, { left: 10, top: 10 });
 
 	canvas = new fabric.Canvas('canvas', {
 	    width: 400,
@@ -30,7 +38,7 @@ export default class Canvas extends React.Component {
 	});
 
 	canvas.add(rect);
-
+	//canvas.add(text);
     }
 
     render(){

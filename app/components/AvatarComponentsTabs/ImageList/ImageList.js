@@ -7,9 +7,13 @@ export default class ImageList extends React.Component {
 	const List = this.props.list;
 
 	return (
-	    <div>
+	    <div className="image-list">
 		{ List.map(image => (
-		    <img key={image.src} src={image.src} alt=""/>
+		    <div key={image.src}
+			 onClick={this.props.handleClick}
+		    	 className="image-list__item">
+			<img src={image.src} alt=""/>
+		    </div>
 		))}
 	    </div>
 	)

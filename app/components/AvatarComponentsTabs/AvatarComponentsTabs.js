@@ -3,6 +3,7 @@ import { Tabs, Tab } from 'material-ui/Tabs';
 import { Faces, Hair, Glasses, Clothes } from '../AvatarComponents/AvatarComponents';
 import SwipeableViews from 'react-swipeable-views';
 import ImageList from './ImageList/ImageList';
+import AvatarConstructorActions from '../../actions/AvatarConstructorActions';
 
 const styles = {
     headline: {
@@ -39,6 +40,11 @@ export default class AvatarComponentsTabs extends React.Component {
     };
 
     render() {
+	const setAvatarsFace = (event) => {
+	    const face = event.target.src;
+	    AvatarConstructorActions.setFace(face);
+	};
+
 	return (
 	    <div style={styles.tabContainer}>
 
@@ -56,7 +62,7 @@ export default class AvatarComponentsTabs extends React.Component {
 				index={this.state.slideIndex}
 		    		onChangeIndex={this.handleChange}>
 
-		    <ImageList list={ Faces }/>
+		    <ImageList list={ Faces } handleClick={setAvatarsFace} />
 		    <ImageList list={ Hair }/>
 		    <ImageList list={ Glasses }/>
 		    <ImageList list={ Clothes }/>
