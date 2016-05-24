@@ -1,8 +1,8 @@
 import React from 'react';
 import { Tabs, Tab } from 'material-ui/Tabs';
-import SwipeableViews from 'react-swipeable-views';
-
 import { Faces, Hair, Glasses, Clothes } from '../AvatarComponents/AvatarComponents';
+import SwipeableViews from 'react-swipeable-views';
+import ImageList from './ImageList/ImageList';
 
 const styles = {
     headline: {
@@ -34,48 +34,35 @@ export default class AvatarComponentsTabs extends React.Component {
 
     handleChange = (value) => {
 	this.setState({
-	    slideIndex: value,
+	    slideIndex: value
 	});
     };
 
     render() {
 	return (
 	    <div style={styles.tabContainer}>
-		<Tabs
-		    onChange={this.handleChange}
-		    value={this.state.slideIndex}
-		>
+
+		<Tabs onChange={this.handleChange}
+		      value={this.state.slideIndex}>
+
 		    <Tab label="Face" value={0} />
 		    <Tab label="Hair" value={1} />
 		    <Tab label="Glasses" value={2} />
 		    <Tab label="Clothes" value={3} />
+
 		</Tabs>
-		<SwipeableViews
-		    className='tab-views'
-		    index={this.state.slideIndex}
-		    onChangeIndex={this.handleChange}
-		>
-		    <div>
-			{ Faces.map(face => (
-			    <img key={face.src} src={face.src} alt=""/>
-			))}
-		    </div>
-		    <div style={styles.slide}>
-			{ Hair.map(face => (
-			    <img key={face.src} src={face.src} alt=""/>
-			))}
-		    </div>
-		    <div style={styles.slide}>
-			{ Glasses.map(face => (
-			    <img key={face.src} src={face.src} alt=""/>
-			))}
-		    </div>
-		    <div style={styles.slide}>
-			{ Clothes.map(face => (
-			    <img key={face.src} src={face.src} alt=""/>
-			))}
-		    </div>
+
+		<SwipeableViews className='tab-views'
+				index={this.state.slideIndex}
+		    		onChangeIndex={this.handleChange}>
+
+		    <ImageList list={ Faces }/>
+		    <ImageList list={ Hair }/>
+		    <ImageList list={ Glasses }/>
+		    <ImageList list={ Clothes }/>
+
 		</SwipeableViews>
+
 	    </div>
 	);
     }

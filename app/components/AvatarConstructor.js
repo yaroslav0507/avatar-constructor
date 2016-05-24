@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Paper from 'material-ui/Paper';
-import NavigationBar from './NavigationBar';
+import NavigationBar from './NavigationBar/NavigationBar';
 import Canvas from './Canvas/Canvas';
 import AvatarComponentsTabs from './AvatarComponentsTabs/AvatarComponentsTabs';
 
@@ -45,8 +45,6 @@ export default class AvatarConstructor extends React.Component{
 		    </Paper>
 		</div>
 	    </div>
-
-
 	)
     }
 }
