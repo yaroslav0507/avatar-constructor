@@ -4,10 +4,17 @@ require("./scss/core.scss");
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import AvatarConstructor from './components/AvatarConstructor';
 
-import HomePage from './pages/home/homePage';
+const App = () => (
+    <MuiThemeProvider muiTheme={getMuiTheme()}>
+	<AvatarConstructor />
+    </MuiThemeProvider>
+);
 
 ReactDOM.render(
-    <HomePage />,
-    document.getElementById('content')
+    <App/>,
+    document.getElementById('app')
 );
