@@ -54070,11 +54070,11 @@
 	var _avatar = {};
 	
 	var _defaultAvatar = {
-				face: '/img/grid-list/' + _PREDEFINED_IMAGES2.default.faces[0],
-				hair: '/img/grid-list/' + _PREDEFINED_IMAGES2.default.beards[0],
-				glasses: '/img/grid-list/' + _PREDEFINED_IMAGES2.default.glasses[0],
-				clothes: '/img/grid-list/' + _PREDEFINED_IMAGES2.default.wear[6],
-				background: '/img/backgrounds/' + _PREDEFINED_IMAGES2.default.backgrounds[0]
+				face: './img/grid-list/' + _PREDEFINED_IMAGES2.default.faces[0],
+				hair: './img/grid-list/' + _PREDEFINED_IMAGES2.default.beards[0],
+				glasses: './img/grid-list/' + _PREDEFINED_IMAGES2.default.glasses[0],
+				clothes: './img/grid-list/' + _PREDEFINED_IMAGES2.default.wear[6],
+				background: './img/backgrounds/' + _PREDEFINED_IMAGES2.default.backgrounds[0]
 	};
 	
 	var Store = function (_EventEmitter) {
