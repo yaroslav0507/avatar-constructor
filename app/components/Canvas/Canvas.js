@@ -6,11 +6,11 @@ import AvatarConstructorStore from '../../stores/AvatarConstructorStore';
 
 const defaultPositions = {
     face: {
-	top: 70,
-	left: 20
+	top: 80,
+	left: 40
     },
     hair: {
-	top: 45,
+	top: 40,
 	left: 27
     },
     glasses: {
@@ -30,7 +30,6 @@ export default class Canvas extends React.Component {
     }
 
     componentDidMount(){
-	this.state = this.props;
 	this.canvas = new fabric.Canvas('canvas', {
 	    width: 400,
 	    height: 580
@@ -82,9 +81,7 @@ export default class Canvas extends React.Component {
 
     render(){
 	return (
-	    <div>
-		<canvas id="canvas"></canvas>
-	    </div>
+	    <canvas id="canvas"></canvas>
 	)
     }
 }

@@ -9,10 +9,10 @@ const CHANGE_EVENT = 'change';
 let _avatar = {};
 
 let _defaultAvatar = {
-    //face: `/img/grid-list/${PREDEFINED_IMAGES.faces[0]}`,
-    //hair: `/img/grid-list/${PREDEFINED_IMAGES.beards[0]}`,
-    //glasses: `/img/grid-list/${PREDEFINED_IMAGES.glasses[0]}`,
-    //clothes: `/img/grid-list/${PREDEFINED_IMAGES.wear[0]}`
+    face: `/img/grid-list/${PREDEFINED_IMAGES.faces[0]}`,
+    hair: `/img/grid-list/${PREDEFINED_IMAGES.beards[0]}`,
+    glasses: `/img/grid-list/${PREDEFINED_IMAGES.glasses[0]}`,
+    clothes: `/img/grid-list/${PREDEFINED_IMAGES.wear[0]}`
 };
 
 class Store extends EventEmitter {
