@@ -34,7 +34,7 @@ const PREDEFINED_IMAGES = {
 	'wear_8.png'
     ],
     backgrounds: [
-	'bg.jpg'
+	'bg.png'
     ]
 };
 

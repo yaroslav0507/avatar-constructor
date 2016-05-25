@@ -13,7 +13,7 @@ let _defaultAvatar = {
     hair: `/img/grid-list/${PREDEFINED_IMAGES.beards[0]}`,
     glasses: `/img/grid-list/${PREDEFINED_IMAGES.glasses[0]}`,
     clothes: `/img/grid-list/${PREDEFINED_IMAGES.wear[6]}`,
-    background: `/img/${PREDEFINED_IMAGES.backgrounds[0]}`
+    background: `/img/backgrounds/${PREDEFINED_IMAGES.backgrounds[0]}`
 };
 
 class Store extends EventEmitter {
