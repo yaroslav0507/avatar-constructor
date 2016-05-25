@@ -1,39 +1,35 @@
 'use strict';
 
 import React from 'react';
+
+import RaisedButton from 'material-ui/RaisedButton';
+import SaveIcon from 'material-ui/svg-icons/content/save';
+
 import fabric from 'fabric/dist/fabric.require';
 import AvatarConstructorStore from '../../stores/AvatarConstructorStore';
+import defaultPositions from '../../constants/DEFAULT_POSITIONS';
 
-const defaultPositions = {
-    face: {
-	top: 80,
-	left: 40
-    },
-    hair: {
-	top: 40,
-	left: 27
-    },
-    glasses: {
-	top: 150,
-	left: 47
-    },
-    clothes: {
-	top: 280,
-	left: 27
-    }
-};
 
 export default class Canvas extends React.Component {
     constructor(){
 	super();
 	this.currentObject = {};
+	this.width = 400;
+	this.height = 580;
     }
 
     componentDidMount(){
 	this.canvas = new fabric.Canvas('canvas', {
-	    width: 400,
-	    height: 580
+	    width: this.width,
+	    height: this.height
 	});
+	this.drawBackground();
+	this.drawAvatar({face: '', hair: '', glasses: '', clothes: ''});
+    }
+
+    drawBackground(){
+	const { background } = this.props;
+	this.canvas.setBackgroundImage(background);
     }
 
     drawAvatar(prevProps){
@@ -64,10 +60,8 @@ export default class Canvas extends React.Component {
 	    this.currentObject[type] = img;
 	    img.set(position);
 	    this.canvas.add(img);
-
-	    img.on('selected', (img) => {
-		console.log('Selected', img);
-	    });
+	    type === 'face' ? this.canvas.sendToBack(img) : '';
+	    type === 'glasses' ? this.canvas.bringToFront(img) : '';
 	});
     }
 
@@ -79,9 +73,23 @@ export default class Canvas extends React.Component {
 	this.drawAvatar(prevProps);
     }
 
+    onSaveButtonClicked(event){
+	let link = event.target;
+	link.href = this.canvas.toDataURL();
+	link.download = 'avatar.png';
+    }
+
     render(){
+	function saveAvatar(event){
+	    console.log(event);
+	    this.onSaveButtonClicked(event);
+	}
 	return (
-	    <canvas id="canvas"></canvas>
+	    <div>
+		<canvas id="canvas"></canvas>
+
+		<a href="#" className="material-link" onClick={saveAvatar.bind(this)}>Save Image</a>
+	    </div>
 	)
     }
 }

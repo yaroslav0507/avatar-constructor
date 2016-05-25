@@ -13,21 +13,22 @@ const styles = {
 	flexDirection: 'row',
 	justifyContent: 'center',
 	padding: 20,
-	width: '100%'
+	width: '100%',
+	maxWidth: 1200,
+	margin: 'auto'
     },
     paperLeft:{
 	flex: 1,
-	height: 600,
+	height: 655,
 	margin: 10,
 	textAlign: 'center',
 	padding: 10
     },
     paperRight:{
-	height: 600,
+	height: 655,
 	maxWidth: 900,
 	flex: 3,
 	margin: 10,
-	padding: 10,
 	textAlign: 'center'
     }
 };
