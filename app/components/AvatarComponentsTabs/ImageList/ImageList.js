@@ -1,10 +1,13 @@
 'use strict';
 
 import React from 'react';
+import Divider from 'material-ui/Divider';
 
 const styles = {
     headline: {
-	marginBottom: 25
+	marginBottom: 20,
+	paddingBottom: 20,
+	borderBottom: '1px solid #E0E0E0'
     },
     title: {
 	fontSize: 24,
@@ -18,7 +21,7 @@ const styles = {
 };
 
 export default class ImageList extends React.Component {
-    render(){
+    render() {
 	const { list, title } = this.props;
 
 	return (
@@ -28,11 +31,10 @@ export default class ImageList extends React.Component {
 		    Click item to select <br/>
 		</div>
 
-
 		{ list.map(image => (
 		    <div key={image.src}
 			 onClick={this.props.handleClick}
-		    	 className="image-list__item">
+			 className="image-list__item">
 			<img src={image.src} alt=""/>
 		    </div>
 		))}

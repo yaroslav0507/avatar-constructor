@@ -15,7 +15,7 @@ export default class Canvas extends React.Component {
 	super();
 	this.currentObject = {};
 	this.width = 400;
-	this.height = 580;
+	this.height = 480;
     }
 
     componentDidMount(){
@@ -85,7 +85,7 @@ export default class Canvas extends React.Component {
 	    this.onSaveButtonClicked(event);
 	}
 	return (
-	    <div>
+	    <div className="canvas-wrapper">
 		<canvas id="canvas"></canvas>
 
 		<a href="#" className="material-link" onClick={saveAvatar.bind(this)}>Save Image</a>

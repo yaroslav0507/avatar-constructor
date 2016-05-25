@@ -1,18 +1,18 @@
 export default {
     face: {
-	top: 80,
+	top: 50,
 	left: 40
     },
     hair: {
-	top: 30,
+	top: 0,
 	left: 90
     },
     glasses: {
-	top: 160,
+	top: 130,
 	left: 129
     },
     clothes: {
-	top: 287,
+	top: 257,
 	left: 37
     }
 };

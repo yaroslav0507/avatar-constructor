@@ -3,6 +3,7 @@
 import React from 'react';
 import Paper from 'material-ui/Paper';
 import NavigationBar from './NavigationBar/NavigationBar';
+import Footer from './Footer/Footer';
 import Canvas from './Canvas/Canvas';
 import AvatarComponentsTabs from './AvatarComponentsTabs/AvatarComponentsTabs';
 import AvatarConstructorStore from '../stores/AvatarConstructorStore';
@@ -19,14 +20,14 @@ const styles = {
     },
     paperLeft:{
 	flex: 1,
-	height: 655,
+	height: 500,
 	margin: 10,
 	textAlign: 'center',
 	padding: 10
     },
     paperRight:{
-	height: 655,
-	maxWidth: 900,
+	height: 500,
+	maxWidth: 760,
 	flex: 3,
 	margin: 10,
 	textAlign: 'center'
@@ -58,7 +59,7 @@ export default class AvatarConstructor extends React.Component{
 
     render(){
 	return (
-	    <div>
+	    <div className="avatar-constructor">
 		<NavigationBar />
 		<div style={styles.div}>
 		    <Paper style={styles.paperLeft}>
@@ -68,6 +69,7 @@ export default class AvatarConstructor extends React.Component{
 			<AvatarComponentsTabs />
 		    </Paper>
 		</div>
+		<Footer></Footer>
 	    </div>
 	)
     }
