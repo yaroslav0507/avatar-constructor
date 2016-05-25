@@ -42,14 +42,9 @@ export default class AvatarConstructor extends React.Component{
     }
 
     onStoreChanged(){
-	console.log(this.state);
 	this.setState({
 	    avatar: AvatarConstructorStore.getState()
 	});
-    }
-
-    shouldComponentUpdate(nextProps, nextState){
-	return nextState !== this.state;
     }
 
     componentDidMount(){
@@ -66,7 +61,7 @@ export default class AvatarConstructor extends React.Component{
 		<NavigationBar />
 		<div style={styles.div}>
 		    <Paper style={styles.paperLeft}>
-			<Canvas avatar={this.state.avatar}/>
+			<Canvas {...this.state.avatar}/>
 		    </Paper>
 		    <Paper style={styles.paperRight}>
 			<AvatarComponentsTabs />
