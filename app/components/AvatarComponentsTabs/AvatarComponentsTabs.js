@@ -63,9 +63,9 @@ export default class AvatarComponentsTabs extends React.Component {
 		      value={this.state.slideIndex}>
 
 		    <Tab label="Face" value={0} />
-		    <Tab label="Hair" value={1} />
-		    <Tab label="Glasses" value={2} />
-		    <Tab label="Clothes" value={3} />
+		    <Tab label="Clothes" value={1} />
+		    <Tab label="Hair" value={2} />
+		    <Tab label="Glasses" value={3} />
 
 		</Tabs>
 
@@ -74,9 +74,9 @@ export default class AvatarComponentsTabs extends React.Component {
 		    		onChangeIndex={this.handleChange}>
 
 		    <ImageList list={ Faces } title="Select Face" handleClick={setAvatarsFace} />
+		    <ImageList list={ Clothes } title="Select Clothes" handleClick={setAvatarsClothes}/>
 		    <ImageList list={ Hair } title="Select Hair" handleClick={setAvatarsHair} />
 		    <ImageList list={ Glasses } title="Select Glasses" handleClick={setAvatarsGlasses} />
-		    <ImageList list={ Clothes } title="Select Clothes" handleClick={setAvatarsClothes}/>
 
 		</SwipeableViews>
 
