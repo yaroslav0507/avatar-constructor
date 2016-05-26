@@ -7,28 +7,28 @@ const AvatarConstructorActions = {
     setFace: function (src) {
 	dispatcher.dispatch({
 	    type: ACTION_CONSTANTS.SET_FACE,
-	    src: src
+	    src
 	})
     },
 
     setHair: function (src) {
 	dispatcher.dispatch({
 	    type: ACTION_CONSTANTS.SET_HAIR,
-	    src: src
+	    src
 	})
     },
 
     setGlasses: function (src) {
 	dispatcher.dispatch({
 	    type: ACTION_CONSTANTS.SET_GLASSES,
-	    src: src
+	    src
 	})
     },
 
     setClothes: function (src) {
 	dispatcher.dispatch({
 	    type: ACTION_CONSTANTS.SET_CLOTHES,
-	    src: src
+	    src
 	})
     }
 };
