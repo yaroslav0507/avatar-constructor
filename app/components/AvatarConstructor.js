@@ -66,7 +66,7 @@ export default class AvatarConstructor extends React.Component{
 			<Canvas {...this.state.avatar}/>
 		    </Paper>
 		    <Paper style={styles.paperRight}>
-			<AvatarComponentsTabs />
+			<AvatarComponentsTabs {...this.state.avatar}/>
 		    </Paper>
 		</div>
 		<Footer></Footer>

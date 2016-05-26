@@ -23,13 +23,14 @@ export default class Canvas extends React.Component {
 	    width: this.width,
 	    height: this.height
 	});
+
 	this.drawBackground();
 	this.drawAvatar({face: '', hair: '', glasses: '', clothes: ''});
     }
 
     drawBackground(){
 	const { background } = this.props;
-	this.canvas.setBackgroundImage(background);
+	this.canvas.setBackgroundImage(background, this.canvas.renderAll.bind(this.canvas));
     }
 
     drawAvatar(prevProps){
