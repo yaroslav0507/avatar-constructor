@@ -1,4 +1,3 @@
-[![npm version](https://badge.fury.io/js/react-es6-starter.svg)](https://badge.fury.io/js/react-es6-starter)
 # Avatar Constructor
 You can see [demo](http://yaroslav0507.github.io/avatar-constructor/);
 
