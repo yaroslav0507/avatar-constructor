@@ -9,6 +9,9 @@ You can see [demo](http://yaroslav0507.github.io/avatar-constructor/);
 - [Flux](https://facebook.github.io/flux/);
 - [Fabric JS](http://fabricjs.com/);
 
+## Interface 
+![avatar constructor](https://www.dropbox.com/s/i7g68c7urhcx0dd/avatar_constructor_interface.png?dl=1)
+
 ## Running Locally
 
 Make sure you have [Node.js](http://nodejs.org/) installed.
@@ -23,6 +26,3 @@ Your app should now be running on [localhost:4000](http://localhost:4000/).
 
 ## Developing mode
 All changes in the code will be immediately reflected in your browser by WebPach HRM - Hot Module Replacement
-
-## Interface 
-![avatar constructor](https://www.dropbox.com/s/i7g68c7urhcx0dd/avatar_constructor_interface.png?dl=1)
