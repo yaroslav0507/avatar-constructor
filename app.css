@@ -74,7 +74,10 @@ body {
       cursor: pointer; }
 
 .avatar-constructor {
-  font-family: 'Roboto', sans-serif; }
+  font-family: 'Roboto', sans-serif;
+  display: inline-block;
+  width: 100%;
+  min-width: 1200px; }
 
 .canvas-wrapper {
   margin: auto;

@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "c5c050317dd54814e06f"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "e3dde669f6ea6d312d83"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -29572,7 +29572,7 @@
 																_react2.default.createElement(
 																			_Paper2.default,
 																			{ style: styles.paperRight },
-																			_react2.default.createElement(_AvatarComponentsTabs2.default, null)
+																			_react2.default.createElement(_AvatarComponentsTabs2.default, this.state.avatar)
 																)
 													),
 													_react2.default.createElement(_Footer2.default, null)
@@ -34755,6 +34755,7 @@
 													width: this.width,
 													height: this.height
 										});
+	
 										this.drawBackground();
 										this.drawAvatar({ face: '', hair: '', glasses: '', clothes: '' });
 							}
@@ -34763,7 +34764,7 @@
 							value: function drawBackground() {
 										var background = this.props.background;
 	
-										this.canvas.setBackgroundImage(background);
+										this.canvas.setBackgroundImage(background, this.canvas.renderAll.bind(this.canvas));
 							}
 				}, {
 							key: 'drawAvatar',
@@ -54649,9 +54650,9 @@
 																{ onChange: this.handleChange,
 																			value: this.state.slideIndex },
 																_react2.default.createElement(_Tabs.Tab, { label: 'Face', value: 0 }),
-																_react2.default.createElement(_Tabs.Tab, { label: 'Hair', value: 1 }),
-																_react2.default.createElement(_Tabs.Tab, { label: 'Glasses', value: 2 }),
-																_react2.default.createElement(_Tabs.Tab, { label: 'Clothes', value: 3 })
+																_react2.default.createElement(_Tabs.Tab, { label: 'Clothes', value: 1 }),
+																_react2.default.createElement(_Tabs.Tab, { label: 'Hair', value: 2 }),
+																_react2.default.createElement(_Tabs.Tab, { label: 'Glasses', value: 3 })
 													),
 													_react2.default.createElement(
 																_reactSwipeableViews2.default,
@@ -54659,9 +54660,9 @@
 																			index: this.state.slideIndex,
 																			onChangeIndex: this.handleChange },
 																_react2.default.createElement(_ImageList2.default, { list: _AvatarComponents.Faces, title: 'Select Face', handleClick: setAvatarsFace }),
+																_react2.default.createElement(_ImageList2.default, { list: _AvatarComponents.Clothes, title: 'Select Clothes', handleClick: setAvatarsClothes }),
 																_react2.default.createElement(_ImageList2.default, { list: _AvatarComponents.Hair, title: 'Select Hair', handleClick: setAvatarsHair }),
-																_react2.default.createElement(_ImageList2.default, { list: _AvatarComponents.Glasses, title: 'Select Glasses', handleClick: setAvatarsGlasses }),
-																_react2.default.createElement(_ImageList2.default, { list: _AvatarComponents.Clothes, title: 'Select Clothes', handleClick: setAvatarsClothes })
+																_react2.default.createElement(_ImageList2.default, { list: _AvatarComponents.Glasses, title: 'Select Glasses', handleClick: setAvatarsGlasses })
 													)
 										);
 							}
